@@ -64,7 +64,10 @@ const posts = [
 // - Sotto al nome NON inseire il calcolo della data (es 4 mesi fa) ma la data i formato italiano (GG/MM/AAAA)
 
 
-
+// dove aggiungerò nell'html
+const container = document.getElementById('container');
+// ciò che aggiungerò nell'html
+let newHtml = '';
 
 // CICLO FOR PER PRENDERE TUTTE LE INFO CHE MI SERVONO
 for(let i = 0; i < posts.length; i++){
@@ -96,4 +99,36 @@ for(let i = 0; i < posts.length; i++){
     const datePost = singlePosts.created;
     console.log(datePost);
 
+    // aggiungo il template literal
+    newHtml +=`<div class="post">
+                    <div class="post-header">
+                        <div class="post-meta">
+                            <div class="post-meta__icon">
+                                <img class="profile-pic" src="${authorImagePost}" alt="${authorNamePost}"> 
+                            </div>
+                            <div class="post-meta__data">
+                                <div class="post-meta__author">${authorNamePost}</div>
+                                <div class="post-meta__time">${datePost}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__text">${textPost}</div>
+                    <div class="post__image">
+                        <img src="${imagePost}" alt="">
+                    </div>
+                    <div class="post__footer">
+                        <div class="likes js-likes">
+                            <div class="likes__cta">
+                                <a class="like-button  js-like-button" href="#" data-postid="1">
+                                    <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                    <span class="like-button__label">Mi Piace</span>
+                                </a>
+                            </div>
+                            <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${likePost}</b> persone</div>
+                         </div> 
+                    </div>
+                </div>`;
+
 }
+
+container.innerHTML = newHtml;
