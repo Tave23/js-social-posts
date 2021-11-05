@@ -55,3 +55,45 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+// Ricreiamo un feed social aggiungendo al layout di base fornito, il nostro javascript in cui:
+// - Utilizzaimo la base dati fornita e anche il codce HTML/CSS
+// - Gli oggetti nell’array di oggetti rappresentano tutti i post. Ogni post dovrà avere le informazioni necessarie per stampare la relativa card: nome autore, foto profilo, data, testo del post, immagine (non tutti i post devono avere una immagine), numero di likes.
+// - Stampiamo i post del nostro feed.
+// - Sotto al nome NON inseire il calcolo della data (es 4 mesi fa) ma la data i formato italiano (GG/MM/AAAA)
+
+
+
+
+// CICLO FOR PER PRENDERE TUTTE LE INFO CHE MI SERVONO
+for(let i = 0; i < posts.length; i++){
+    // intero array di object
+    const singlePosts = posts[i];
+    console.log(singlePosts);
+    // id post
+    const idPost = singlePosts.id;
+    console.log(idPost);
+    // testo post
+    const textPost = singlePosts.content;
+    console.log(textPost);
+    // image post
+    const imagePost = singlePosts.media;
+    console.log(imagePost);
+
+    // author post
+    // author's name
+    const authorNamePost = singlePosts.author.name;
+    console.log(authorNamePost);
+    // author's image post
+    const authorImagePost = singlePosts.author.image;
+    console.log(authorImagePost);
+
+    // likes post
+    const likePost = singlePosts.likes;
+    console.log(likePost);
+    // data creazione
+    const datePost = singlePosts.created;
+    console.log(datePost);
+
+}
