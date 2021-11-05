@@ -141,7 +141,6 @@ for(let i = 0; i < posts.length; i++){
 }
 
 
-
 container.innerHTML = newHtml;
 
 
