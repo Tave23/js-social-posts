@@ -95,9 +95,17 @@ for(let i = 0; i < posts.length; i++){
     // likes post
     const likePost = singlePosts.likes;
     console.log(likePost);
+
     // data creazione
     const datePost = singlePosts.created;
     console.log(datePost);
+
+    // sistemo la data
+    let dateAr = datePost.split('-');
+    let newDate = dateAr[1] + '/' + dateAr[2] + '/' + dateAr[0];
+                
+    console.log(newDate);
+
 
     // aggiungo il template literal
     newHtml +=`<div class="post">
@@ -108,7 +116,7 @@ for(let i = 0; i < posts.length; i++){
                             </div>
                             <div class="post-meta__data">
                                 <div class="post-meta__author">${authorNamePost}</div>
-                                <div class="post-meta__time">${datePost}</div>
+                                <div class="post-meta__time">${newDate}</div>
                             </div>
                         </div>
                     </div>
@@ -129,6 +137,12 @@ for(let i = 0; i < posts.length; i++){
                     </div>
                 </div>`;
 
+
 }
 
+
+
 container.innerHTML = newHtml;
+
+
+
